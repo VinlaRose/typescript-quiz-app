@@ -4,7 +4,7 @@ export interface QuizProps {
         options: string[];
         correctOption?: number;
     };
-    optionClickHandler(selectedOption: number, correctOption: number | undefined): void;
+    optionClickHandler(selectedOption: number): void;
 }
 
 export const QuizComponent: React.FC<QuizProps> = ({ quiz, optionClickHandler }) => {
@@ -17,7 +17,7 @@ export const QuizComponent: React.FC<QuizProps> = ({ quiz, optionClickHandler })
               key={index}
               onClick={() => {
                 console.log("Clicked option:", item);
-                optionClickHandler(index, quiz.correctOption); 
+                optionClickHandler(index); 
               }}
             >
               {item}
