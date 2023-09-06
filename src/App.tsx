@@ -6,6 +6,7 @@ import { QuizComponent, QuizProps } from "./Models/QuizProps";
 import { Score } from "./Models/Score";
 import { checkAnswer } from "./utilis/checkAnswer";
 import { initialState, quizReducer } from "./Reducer";
+import { ThemeProvider } from "./Contect";
 
 
 
@@ -27,6 +28,7 @@ const optionClick: QuizProps["optionClickHandler"] = (selectedOption) => {
   
   
   return (
+    <ThemeProvider>
     <div className="App">
       <h2>Typescript Day 2</h2>
       <HeaderComponent title={"Quiz App"} />
@@ -36,5 +38,6 @@ const optionClick: QuizProps["optionClickHandler"] = (selectedOption) => {
         </div>
       
     </div>
+    </ThemeProvider>
   );
 }
